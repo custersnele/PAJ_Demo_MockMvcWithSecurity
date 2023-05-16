@@ -74,9 +74,9 @@ public class BeerControllerTest {
 
 	@Test
 	void testUnknownUser() throws Exception {
-		mockMvc.perform(MockMvcRequestBuilders.get("/beers?color=green")
+		mockMvc.perform(MockMvcRequestBuilders.get("/beers?color=brown")
 				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isForbidden());
+				.andExpect(status().isUnauthorized());
 	}
 
 
